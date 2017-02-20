@@ -43,4 +43,4 @@ msgid "Generate Configuration"
 msgstr "生成配置"
 
 msgid "Please upload your packet file, file size limit at 512k. Then change password and copy to basic settings."
-msgstr ""
+msgstr "请上传你的数据包，文件限制为512k，然后修改密码并复制到基本设置配置文件中。"

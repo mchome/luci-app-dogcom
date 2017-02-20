@@ -28,7 +28,7 @@ version:value("dhcp", translate("dhcp"))
 version:value("pppoe", translate("pppoe"))
 version.value = "dhcp"
 
-escpatch = s:taboption("basic", Button, "ESC", translate("Patch the escape problem"))
+escpatch = s:taboption("basic", Button, "esc", translate("Patch the escape problem"))
 function escpatch.write()
     luci.sys.call("sed -i '/proto_run_command/i username=`echo -e \"$username\"`' /lib/netifd/proto/ppp.sh")
     luci.sys.call("sed -i '/proto_run_command/i password=`echo -e \"$password\"`' /lib/netifd/proto/ppp.sh")
@@ -54,8 +54,8 @@ s:tab("generator", translate("Generate Configuration"))
 msg = s:taboption("generator", DummyValue, "", translate(""), 
 translate("Please upload your packet file, file size limit at 512k. Then change password and copy to basic settings."))
 
-autoconfig = s:taboption("generator", DummyValue, "")
-autoconfig.template = "dogcom/auto-configure"
+autoconfig = s:taboption("generator", DummyValue, "autoconfig")
+autoconfig.template = "dogcom/auto_configure"
 
 -- Save Configuration --
 function enable.write(self, section, value)

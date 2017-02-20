@@ -54,13 +54,15 @@ define Package/luci-app-dogcom/install
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/view/dogcom
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/i18n
 	$(INSTALL_DIR) $(1)/etc/config
+	$(INSTALL_DIR) $(1)/etc/init.d
 
 	$(INSTALL_BIN) ./files/root/etc/uci-defaults/40_luci-dogcom $(1)/etc/uci-defaults/luci-app-dogcom
 	$(INSTALL_DATA) ./files/luci/controller/dogcom.lua $(1)/usr/lib/lua/luci/controller/dogcom.lua
 	$(INSTALL_DATA) ./files/luci/model/cbi/dogcom.lua $(1)/usr/lib/lua/luci/model/cbi/dogcom.lua
-	$(INSTALL_DATA) ./files/luci/view/dogcom/auto-configure.htm $(1)/usr/lib/lua/luci/view/dogcom/auto-configure.htm
-	$(INSTALL_DATA) ./files/luci/i18n/dogcom.zh-cn.lmo $(1)/usr/lib/lua/luci/i18n/dogcom.zh-cn.lmo
+	$(INSTALL_DATA) ./files/luci/view/dogcom/auto_configure.htm $(1)/usr/lib/lua/luci/view/dogcom/auto_configure.htm
+	$(INSTALL_DATA) ./files/luci/i18n/dogcom_zh-cn.lmo $(1)/usr/lib/lua/luci/i18n/dogcom.zh-cn.lmo
 	$(INSTALL_CONF) ./files/root/etc/config/dogcom $(1)/etc/config/dogcom
+	$(INSTALL_BIN) ./files/root/etc/init.d/dogcom $(1)/etc/init.d/dogcom
 endef
 
 $(eval $(call BuildPackage,luci-app-dogcom))
