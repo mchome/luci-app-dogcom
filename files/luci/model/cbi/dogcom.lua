@@ -52,7 +52,7 @@ end
 s:tab("generator", translate("Generate Configuration"))
 
 msg = s:taboption("generator", DummyValue, "", translate(""), 
-translate("Please upload your packet file, file size limit at 512k. Then change password and copy to basic settings."))
+translate("Please upload your packet file. Then change password and copy to basic settings."))
 
 autoconfig = s:taboption("generator", DummyValue, "autoconfig")
 autoconfig.template = "dogcom/auto_configure"
