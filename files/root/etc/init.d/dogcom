@@ -7,10 +7,10 @@ start(){
     config_load dogcom
     config_get version config version
     if [ "$version" == "dhcp" ]; then
-        /usr/bin/dogcom -m dhcp -c /etc/dogcom.conf -d
+        /usr/bin/dogcom -m dhcp -c /etc/dogcom.conf -d -e
         echo "Dogcom version dhcp has been started."
     else
-        /usr/bin/dogcom -m pppoe -c /etc/dogcom.conf -d
+        /usr/bin/dogcom -m pppoe -c /etc/dogcom.conf -d -e
         echo "Dogcom version pppoe has been started."
     fi
 }
