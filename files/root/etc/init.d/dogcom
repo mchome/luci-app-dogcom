@@ -19,7 +19,7 @@ stop(){
     if [ ! -f "/tmp/dogcom.pid" ]; then
         echo "Dogcom is not running."
     else
-        pid=`cat /tmp/dogcom.pid`
+        pid='cat /tmp/dogcom.pid'
         kill $pid
         rm -f /tmp/dogcom.pid
         echo "Dogcom has been stopped."
